@@ -1,0 +1,23 @@
+Data Dictionary,
+Field,Definition of data element 
+FF_NDB,A number that uniquely identifies an SR Legacy item.
+SR_NDB,A number that uniquely identifies a Foundation Food item.
+food_category_id,An ID indicating the food group to which a food item belongs.  See food category table for food category descriptions
+FF Food description,Description of Foundation food item
+SR Food description,Description of SR Legacy food item
+Nutrient_id,Unique identifier for a nutrient.  See the nutrient table for nutrient names
+rank,"An alternate way of ordering nutrients instead of listing alphabetically.  Ordering by rank will group similar nutrients together (proximates, vitamins, minerals)"
+FF_Component,Name of the nutrient or component for Foundation Foods
+SR_Component,Name of the nutrient or component for SR Legacy foods
+unit_name,The standard unit of measure for the nutrient
+SR Mean per 100g,Average amount per 100g of edible portion of SR Legacy food
+SR Min,SR Legacy maximum nutrient/component value
+SR Max,SR Legacy minimum nutrient/component value
+ Std_Error,Standard error of the  SR Legacy mean. Null if cannot be calculated. The standard error is also not given if the number of data points is less than three.
+SR Num_Data_pts,"Number of data points is the number of analyses used to calculate the nutrient value in SR Legacy. If the number of used to calculate the nutrient value. If the number of data points is 0, the value was calculated or imputed."
+FF Mean per 100g,Average amount per 100g of edible portion of Foundation Food
+FF Min,Foundation Food minimum nutrient/component value
+FF Max,Foundation Food maximum nutrient/component value
+FF Median,Foundation Food median nutrient/component value
+FF data_points,Number of data points is the number of analyses used to calculate the nutrient value in Foundation Foods
+FF Publication Date,Date when the Foundation food was published to FoodData Central
