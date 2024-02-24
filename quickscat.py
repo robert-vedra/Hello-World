@@ -26,5 +26,6 @@ outliers = df3[(df3['mean'] > std) | (df3['mean'] < -std)]
 ##print(cols)
 # fig = px.histogram(df, x=df['FF Food description'],y=df['difference'])
 # fig.show()
-fig = px.scatter(df3, x=df3['mean'],y=df3['rank'],orientation = 'h')
+
+fig = px.scatter(df, x=df['food_category_id'],y=df['rank'])
 fig.show()
