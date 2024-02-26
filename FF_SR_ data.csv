@@ -1651,7 +1651,7 @@ FF_NDB,SR_NDB,food_category_id,FF Food description,SR Food description,Nutrient_
 4044,4044,4,"Oil, soybean","Oil, soybean, salad or cooking",1288,16200,Beta-sitosterol,Beta-sitosterol,MG,172,161,180,5.573,3,153,135,168,152,5,12/16/2019
 1123,1123,1,"Eggs, Grade A, Large, egg whole","Egg, whole, raw, fresh",1105,7430,Retinol,Retinol,UG,160,139,187,6.614,6,179,136,251,177,24,12/16/2019
 1123,1123,1,"Eggs, Grade A, Large, egg whole","Egg, whole, raw, fresh",1050,1120,"Carbohydrate, by difference","Carbohydrate, by difference",G,0.72,,,,0,0.2,,,,,12/16/2019
-1123,1123,1,"Eggs, Grade A, Large, egg whole","Egg, whole, raw, fresh",1119,7564,"Carbohydrate, by difference",Lutein + zeaxanthin,UG,503,431,575,20.991,6,229,175,294,218,3,12/16/2019
+1123,1123,1,"Eggs, Grade A, Large, egg whole","Egg, whole, raw, fresh",1119,sm,"Carbohydrate, by difference",Lutein + zeaxanthin,UG,503,431,575,20.991,6,229,175,294,218,3,12/16/2019
 1123,1123,1,"Eggs, Grade A, Large, egg whole","Egg, whole, raw, fresh",1120,7460,"Carbohydrate, by difference","Cryptoxanthin, beta",UG,9,7,12,0.673,6,13,8,16,15,3,12/16/2019
 1123,1123,1,"Eggs, Grade A, Large, egg whole","Egg, whole, raw, fresh",1177,6900,"Carbohydrate, by difference","Folate, total",UG,47,,,4.966,23,71,48,104,66,24,12/16/2019
 1123,1123,1,"Eggs, Grade A, Large, egg whole","Egg, whole, raw, fresh",1087,5300,"Carbohydrate, by difference","Calcium, Ca",MG,56,54,58,0.697,6,48,44,54,48,22,12/16/2019
