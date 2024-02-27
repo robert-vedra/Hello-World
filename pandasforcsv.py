@@ -1,7 +1,10 @@
 import pandas as pd
 import plotly.express as px
+from datacleaning import clean_dataframe 
 
 df = pd.read_csv('FF_SR_ data.csv')
+df = clean_dataframe(df)
+
 SRmean = df['SR Mean per 100g']
 FFmean = df['FF Mean per 100g']
 
