@@ -1,9 +1,11 @@
 import pandas as pd
 import plotly.express as px
+from datacleaning import clean_dataframe 
 
 df = pd.read_csv('FF_SR_ data.csv')
-SRmean = df['SR Mean per 100g']
-FFmean = df['FF Mean per 100g']
+df = clean_dataframe(df)
+SRmean = df['SR Mean per 100g'].astype(float)
+FFmean = df['FF Mean per 100g'].astype(float)
 
 vc = df['rank'].value_counts().reset_index()
 df['difference'] = (SRmean-FFmean)
@@ -28,3 +30,4 @@ outliers = df3[(df3['mean'] > std) | (df3['mean'] < -std)]
 # fig.show()
 fig = px.scatter(df3, x=df3['mean'],y=df3['rank'],orientation = 'h')
 fig.show()
+
