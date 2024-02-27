@@ -13,17 +13,8 @@ def percent_difference_by_rank():
 
     vc = df['rank'].value_counts().reset_index()
     df['difference'] = (SRmean-FFmean)
-
-    #for i in range(len(df)):
-
-
-
-    #outliers = df[(df['difference'] > (3*std)) | (df['difference'] < -(3*std))]
     sorted = df.sort_values(['rank', 'difference'], ascending = [True, False])
     df2 = sorted[['rank','difference','FF Mean per 100g']]
-
-
-
     rank = df2.groupby('rank').sum().reset_index()
     df3 = rank.merge(vc,on='rank').fillna(0)
 
@@ -31,6 +22,7 @@ def percent_difference_by_rank():
         df3['rank'] = df3['rank'].astype(int)
     except ValueError:
         pass
+    
     df3['percent difference'] = abs(df3['difference']/df3['FF Mean per 100g'])*100
     std = df3['percent difference'].std()
 
