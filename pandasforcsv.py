@@ -4,14 +4,10 @@ from datacleaning import clean_dataframe
 
 df = pd.read_csv('FF_SR_ data.csv')
 df = clean_dataframe(df)
-<<<<<<< HEAD
+
 SRmean = df['SR Mean per 100g'].astype(float)
 FFmean = df['FF Mean per 100g'].astype(float)
-=======
 
-SRmean = df['SR Mean per 100g']
-FFmean = df['FF Mean per 100g']
->>>>>>> 819e23fe2bc43d1422a43330ec452e10fc6bb245
 
 vc = df['rank'].value_counts().reset_index()
 df['difference'] = (SRmean-FFmean)
