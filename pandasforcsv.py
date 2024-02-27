@@ -19,7 +19,7 @@ rank = df2.groupby('rank').sum().reset_index()
 df3 = rank.merge(vc,on='rank').fillna(0)
 df3['mean'] = df3['difference']/df3['count']
 outliers = df3[(df3['mean'] > std) | (df3['mean'] < -std)]
-
+print(outliers)
 
 #print(first)
 #cols = first['FF Food description'],first['difference']
