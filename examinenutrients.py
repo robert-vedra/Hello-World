@@ -30,6 +30,6 @@ print(outliers)
 #cols = first['FF Food description'],first['difference']
 ##print(cols)
 # fig = px.histogram(df, x=df['FF Food description'],y=df['difference'])
-# fig.show()
 fig = px.scatter(df3, x=df3['mean'],y=df3['Nutrient_id'],orientation = 'h')
-#
+fig.show()
+
