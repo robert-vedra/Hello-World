@@ -14,7 +14,7 @@ def percent_difference_by_rank():
     vc = df['rank'].value_counts().reset_index()
     df['difference'] = (SRmean-FFmean)
     sorted = df.sort_values(['rank', 'difference'], ascending = [True, False])
-    df2 = sorted[['rank','difference','FF Mean per 100g']]
+    df2 = sorted[['rank','Nutrient_id','difference','FF Mean per 100g']]
     rank = df2.groupby('rank').sum().reset_index()
     df3 = rank.merge(vc,on='rank').fillna(0)
 
