@@ -30,14 +30,16 @@ fighigh = px.scatter(toohigh, x='Score',y='Rank',title = 'SR Components Above FF
 
 figlow = px.scatter(toolow, x='Score',y='Rank',title = 'SR Components Below FF Range', hover_name='food_category_id', hover_data='FF_Component')
 
-count = toolow.value_counts('food_category_id')
-total = len(toolow)
-count = (count/total) * 100
-print(count.head)
+# figlow.show()
+# fighigh.show()
 
-count2=toohigh.value_counts('food_category_id')
-count2 = (count2/len(toohigh)) * 100
-print(count2.head())
+count = toolow.value_counts('FF Food description').reset_index().rename(columns={'FF Food description': 'Food Name', 0:'Count'})
+count = count.head()
 
-figlow.show()
-fighigh.show()
+figlow2 = px.bar(count,y='count',x='Food Name', title = 'Flagged Foods with SR Mean Below FF Range')
+figlow2.show()
+
+count2 = toohigh.value_counts('FF Food description').reset_index().rename(columns={'FF Food description': 'Food Name', 0:'Count'})
+count2 = count2.head()
+fighigh2 = px.bar(count2,y='count',x='Food Name', title = 'Flagged Foods SR Mean Above FF Range')
+fighigh2.show()
