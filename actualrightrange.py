@@ -2,7 +2,7 @@ import pandas as pd
 import plotly.express as px
 from datacleaning import clean_dataframe
 
-df = pd.read_csv('FF_SR_ data.csv')
+df = pd.read_csv('datasets/FF_SR_ data.csv')
 df = df[df['rank'] != 'sm']
 #df = clean_dataframe(df)
 

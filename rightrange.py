@@ -4,7 +4,7 @@ from datacleaning import clean_dataframe
 from rank_percentdifference import *
 from valuecounts import *
 
-df = pd.read_csv('FF_SR_ data.csv')
+df = pd.read_csv('datasets/FF_SR_ data.csv')
 df = df[df['rank'] != 'sm']
 df = clean_dataframe(df)
 
