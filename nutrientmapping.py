@@ -3,7 +3,7 @@ from rank_percentdifference import *
 #return list of foods that are bad
 
 #get data
-df2 = 
+
 df = percent_difference_by_rank()
 outliers = find_outliers(df)
 
