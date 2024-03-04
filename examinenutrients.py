@@ -3,33 +3,34 @@ import plotly.express as px
 from datacleaning import clean_dataframe
 
 
+#import and clean dataframe
 df = pd.read_csv('datasets/FF_SR_ data.csv')
 df = clean_dataframe(df)
 
+#determine what the SR and FF means are
 SRmean = df['SR Mean per 100g']
 FFmean = df['FF Mean per 100g']
 
+#print nutrient ids and a value count of each
 vc = df['Nutrient_id'].value_counts().reset_index()
 df['difference'] = (SRmean-FFmean)
 
-#for i in range(len(df)):
-
-
+#find standard deviation --> used to find nutrients that are 'abnormal'
 std = df['difference'].std()
-#outliers = df[(df['difference'] > (3*std)) | (df['difference'] < -(3*std))]
-df2 = df.sort_values(['Nutrient_id', 'difference'], ascending = [True, False])
-# = sorted[['Nutrient_id','difference']]
-rank = df2.groupby('Nutrient_id').sum().reset_index()
-df3 = rank.merge(vc,on='Nutrient_id').fillna(0)
-df3['mean'] = df3['difference']/df3['count']
-outliers = df3[(df3['mean'] > .5*std) | (df3['mean'] < .5*-std)]
 
-print(outliers)
+#create new df, sortednutid, which is df sorted by the nutrient id
+sortednutid = df.sort_values(['Nutrient_id', 'difference'], ascending = [True, False])
 
-#print(first)
-#cols = first['FF Food description'],first['difference']
-##print(cols)
-# fig = px.histogram(df, x=df['FF Food description'],y=df['difference'])
-fig = px.scatter(df3, x=df3['mean'],y=df3['Nutrient_id'],orientation = 'h')
+# 
+rank = sortednutid.groupby('Nutrient_id').sum().reset_index()
+
+#create new df, finaldf, that has nutrient_id and difference. Frome here determine outliers
+finaldf = rank.merge(vc,on='Nutrient_id').fillna(0)
+finaldf['mean'] = finaldf['difference']/finaldf['count']
+outliers = finaldf[(finaldf['mean'] > .5*std) | (finaldf['mean'] < .5*-std)]
+
+#show scatterplot
+fig = px.scatter(finaldf, x=finaldf['mean'],y=finaldf['Nutrient_id'],orientation = 'h')
 fig.show()
+
 

@@ -1,9 +1,11 @@
 import pandas as pd
 from rank_percentdifference import *
-#return list of foods that are bad
+
+###NOT IN USE####
+
+
 
 #get data
-
 df = percent_difference_by_rank()
 outliers = find_outliers(df)
 
@@ -12,8 +14,3 @@ outlierslist = outliers['FF_Component'].tolist()
 
 for nutrient in outlierslist:
     print(outliers[outliers['FF_Description']==nutrient])
-    
-
-
-
-#get list of nutrient ids
