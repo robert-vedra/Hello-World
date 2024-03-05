@@ -1,14 +1,14 @@
 import pandas as pd
 import plotly.express as px
 
+#get data
 df = pd.read_csv('datasets/FF_SR_ data.csv')
+
 SRmean = df['SR Mean per 100g']
 FFmean = df['FF Mean per 100g']
 
 vc = df['rank'].value_counts().reset_index()
 df['difference'] = (SRmean-FFmean)
-
-#for i in range(len(df)):
 
 
 std = df['difference'].std()
